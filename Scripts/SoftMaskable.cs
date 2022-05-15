@@ -168,7 +168,7 @@ namespace Coffee.UISoftMask
         /// <param name="eventCamera">Raycast camera.</param>
         bool ICanvasRaycastFilter.IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
         {
-            if (!isActiveAndEnabled || !softMask)
+            if (!isActiveAndEnabled || !softMask || !graphic.raycastTarget )
                 return true;
             if (!RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, sp, eventCamera))
                 return false;
